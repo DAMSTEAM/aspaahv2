@@ -4,6 +4,24 @@
     </x-slot>
     <x-slot name="form">
         <div class="row">
+            @if (session('status'))
+            <div class="">
+                {{ session('status') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @error(session('status'))
+                <div class="">
+                    {{ session('status') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @enderror
+        </div>
+        <div class="row">
             <!-- Profile Photo -->
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
             <div class="mb-3" x-data="{photoName: null, photoPreview: null}">
@@ -17,7 +35,8 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
                 <div>
-                    <div class="mb-4 d-flex justify-content-center p-5" style="background-image: url('https://image.freepik.com/foto-gratis/textura-fondo-verde-cesped-artificial_1232-1975.jpg')">
+                    <div class="mb-4 d-flex justify-content-center p-5"
+                        style="background-image: url('https://image.freepik.com/foto-gratis/textura-fondo-verde-cesped-artificial_1232-1975.jpg')">
                         <!-- Current Profile Photo -->
                         <div x-show="! photoPreview">
                             @if (Auth::user()->profile_photo_path)
@@ -42,7 +61,8 @@
                         </x-jet-secondary-button>
 
                         @if ($this->user->profile_photo_path)
-                        <x-jet-secondary-button class="w-100 bg-danger border-danger" type="button" wire:click="deleteProfilePhoto">
+                        <x-jet-secondary-button class="w-100 bg-danger border-danger" type="button"
+                            wire:click="deleteProfilePhoto">
                             <div wire:loading wire:target="deleteProfilePhoto" class="spinner-border spinner-border-sm"
                                 role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -61,7 +81,7 @@
         <div class="row">
             <!-- Name -->
             <div class="mb-3">
-                <x-jet-label value="{{ __('Nombre de usuario') }}" class="form-label" for="name"/>
+                <x-jet-label value="{{ __('Nombre de usuario') }}" class="form-label" for="name" />
                 <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
                     wire:model.defer="state.name" autocomplete="name" />
                 <x-jet-input-error for="name" />
