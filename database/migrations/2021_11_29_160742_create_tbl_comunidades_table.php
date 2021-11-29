@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTblComunidadesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('tbl_comunidades', function (Blueprint $table) {
+            $table->integer('ID_COMUNIDAD')->primary();
+            $table->string('NO_COMUNIDAD', 100);
+            $table->integer('FK_DISTRITO');
+            
+            $table->foreign('FK_DISTRITO', 'tbl_distrito_tbl_comunidad_fk')->references('ID_DISTRITO')->on('tbl_distritos');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('tbl_comunidades');
+    }
+}
