@@ -14,7 +14,7 @@ class CreateTblRequisitosInscripcionesTable extends Migration
     public function up()
     {
         Schema::create('tbl_requisitos_inscripciones', function (Blueprint $table) {
-            $table->integer('ID_REQUISITO_INSCRIPCION')->primary();
+            $table->id('ID_REQUISITO_INSCRIPCION');
             $table->string('DE_URL', 200);
             $table->integer('FK_INSCRIPCION');
             $table->integer('FK_REQUISITO');

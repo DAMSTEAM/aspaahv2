@@ -14,7 +14,7 @@ class CreateTblDistritosTable extends Migration
     public function up()
     {
         Schema::create('tbl_distritos', function (Blueprint $table) {
-            $table->integer('ID_DISTRITO')->primary();
+            $table->id('ID_DISTRITO');
             $table->string('NO_DISTRITO', 100);
             $table->integer('FK_PROVINCIA');
             

@@ -14,7 +14,7 @@ class CreateTblDireccionesTable extends Migration
     public function up()
     {
         Schema::create('tbl_direcciones', function (Blueprint $table) {
-            $table->integer('ID_DIRECCION')->primary();
+            $table->id('ID_DIRECCION');
             $table->string('NO_REFERENCIA', 200);
             $table->integer('FK_COMUNIDAD');
             

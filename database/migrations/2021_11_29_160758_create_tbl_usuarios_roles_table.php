@@ -14,7 +14,7 @@ class CreateTblUsuariosRolesTable extends Migration
     public function up()
     {
         Schema::create('tbl_usuarios_roles', function (Blueprint $table) {
-            $table->integer('ID_USUARIO_ROL')->primary();
+            $table->id('ID_USUARIO_ROL');
             $table->integer('FK_ROL');
             $table->integer('FK_SOCIO');
             

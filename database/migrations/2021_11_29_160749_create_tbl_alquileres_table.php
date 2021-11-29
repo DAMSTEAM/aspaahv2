@@ -14,14 +14,14 @@ class CreateTblAlquileresTable extends Migration
     public function up()
     {
         Schema::create('tbl_alquileres', function (Blueprint $table) {
-            $table->integer('ID_ALQUILER')->primary();
+            $table->id('ID_ALQUILER');
             $table->date('FE_INICIO');
             $table->date('FE_FIN');
             $table->string('DE_OBSERVACION', 200);
             $table->char('ES_ALQUILER', 1);
             $table->integer('CO_ALQUILER');
             $table->integer('FK_SOLICITUD');
-            $table->integer('FK_MAQUINARIA');
+            $table->unsignedBigInteger('FK_MAQUINARIA');
             $table->integer('FK_DIRECCION');
             $table->integer('FK_INGRESO');
             

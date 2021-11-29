@@ -14,7 +14,7 @@ class CreateTblRolesPrivilegiosTable extends Migration
     public function up()
     {
         Schema::create('tbl_roles_privilegios', function (Blueprint $table) {
-            $table->integer('ID_ROL_PRIVILEGIO')->primary();
+            $table->id('ID_ROL_PRIVILEGIO');
             $table->integer('FK_PRIVILEGIO');
             $table->integer('FK_ROLE');
             

@@ -14,7 +14,7 @@ class CreateTblEventosTable extends Migration
     public function up()
     {
         Schema::create('tbl_eventos', function (Blueprint $table) {
-            $table->integer('ID_EVENTO')->primary();
+            $table->id('ID_EVENTO');
             $table->string('CO_EVENTO', 10);
             $table->string('NO_EVENTO', 100);
             $table->string('DE_EVENTO', 200);

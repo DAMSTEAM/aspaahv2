@@ -14,7 +14,7 @@ class CreateTblEgresosTable extends Migration
     public function up()
     {
         Schema::create('tbl_egresos', function (Blueprint $table) {
-            $table->integer('ID_EGRESO')->primary();
+            $table->id('ID_EGRESO');
             $table->string('NO_EGRESO', 150);
             $table->float('MO_DINERO');
             $table->integer('FK_SOCIO');

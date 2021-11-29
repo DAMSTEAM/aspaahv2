@@ -14,7 +14,7 @@ class CreateTblComunidadesTable extends Migration
     public function up()
     {
         Schema::create('tbl_comunidades', function (Blueprint $table) {
-            $table->integer('ID_COMUNIDAD')->primary();
+            $table->id('ID_COMUNIDAD');
             $table->string('NO_COMUNIDAD', 100);
             $table->integer('FK_DISTRITO');
             

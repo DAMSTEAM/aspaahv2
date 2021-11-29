@@ -14,7 +14,7 @@ class CreateMaeRolesTable extends Migration
     public function up()
     {
         Schema::create('mae_roles', function (Blueprint $table) {
-            $table->integer('ID_ROL')->primary();
+            $table->id('ID_ROL');
             $table->string('NO_ROL', 150);
         });
     }

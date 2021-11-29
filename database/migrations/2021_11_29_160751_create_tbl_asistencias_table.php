@@ -14,7 +14,7 @@ class CreateTblAsistenciasTable extends Migration
     public function up()
     {
         Schema::create('tbl_asistencias', function (Blueprint $table) {
-            $table->integer('ID_ASISTENCIA')->primary();
+            $table->id('ID_ASISTENCIA');
             $table->char('ES_SOCIO', 1);
             $table->date('FE_LLEGADA_SOCIO');
             $table->integer('FK_EVENTO');

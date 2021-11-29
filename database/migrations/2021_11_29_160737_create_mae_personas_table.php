@@ -14,7 +14,7 @@ class CreateMaePersonasTable extends Migration
     public function up()
     {
         Schema::create('mae_personas', function (Blueprint $table) {
-            $table->integer('PK_ID_SOCIO')->primary();
+            $table->id('PK_ID_SOCIO');
             $table->string('NO_SOCIO', 100);
             $table->string('AP_PATERNO', 80);
             $table->string('AP_MATERNO', 80);

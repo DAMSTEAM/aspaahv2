@@ -14,7 +14,7 @@ class CreateTblDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('tbl_departamentos', function (Blueprint $table) {
-            $table->integer('ID_DEPARTAMENTO')->primary();
+            $table->id('ID_DEPARTAMENTO');
             $table->string('NO_DEPARTAMENTO', 100);
         });
     }

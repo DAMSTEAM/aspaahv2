@@ -14,7 +14,7 @@ class CreateTblIngresosTable extends Migration
     public function up()
     {
         Schema::create('tbl_ingresos', function (Blueprint $table) {
-            $table->integer('ID_INGRESO')->primary();
+            $table->id('ID_INGRESO');
             $table->char('TI_PAGO', 1);
             $table->char('TI_INGRESO', 1);
             $table->string('NO_INGRESO', 100);

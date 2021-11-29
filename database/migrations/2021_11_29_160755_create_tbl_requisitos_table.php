@@ -14,7 +14,7 @@ class CreateTblRequisitosTable extends Migration
     public function up()
     {
         Schema::create('tbl_requisitos', function (Blueprint $table) {
-            $table->integer('ID_REQUISITO')->primary();
+            $table->id('ID_REQUISITO');
             $table->string('NO_REQUISITO', 100);
         });
     }

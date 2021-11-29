@@ -14,7 +14,7 @@ class CreateTblTiposSolicitudesTable extends Migration
     public function up()
     {
         Schema::create('tbl_tipos_solicitudes', function (Blueprint $table) {
-            $table->integer('PK_ID_TIPO_SOLICITUD')->primary();
+            $table->id('PK_ID_TIPO_SOLICITUD');
             $table->string('NO_SOLICITUD', 50);
             $table->char('DE_ABREVIACION', 2);
         });

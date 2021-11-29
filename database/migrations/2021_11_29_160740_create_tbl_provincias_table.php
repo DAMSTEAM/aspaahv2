@@ -14,7 +14,7 @@ class CreateTblProvinciasTable extends Migration
     public function up()
     {
         Schema::create('tbl_provincias', function (Blueprint $table) {
-            $table->integer('ID_PROVINCIA')->primary();
+            $table->id('ID_PROVINCIA');
             $table->string('NO_PROVINCIA', 100);
             $table->integer('FK_DEPARTAMENTO');
             

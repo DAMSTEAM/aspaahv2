@@ -14,7 +14,7 @@ class CreateMaeUsuariosTable extends Migration
     public function up()
     {
         Schema::create('mae_usuarios', function (Blueprint $table) {
-            $table->integer('PK_ID_SOCIO')->primary();
+            $table->id('PK_ID_SOCIO');
             $table->string('US_NOMBRE', 20);
             $table->string('DE_EMAIL', 100);
             $table->string('PW_USUARIO', 15);

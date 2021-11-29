@@ -14,7 +14,7 @@ class CreateMaeMaquinariasTable extends Migration
     public function up()
     {
         Schema::create('mae_maquinarias', function (Blueprint $table) {
-            $table->integer('ID_MAQUINARIA')->primary();
+            $table->id('ID_MAQUINARIA');
             $table->char('TI_MAQUINARIA', 1);
             $table->char('ES_MAQUINARIA', 1);
             $table->string('CO_MARCA', 15);

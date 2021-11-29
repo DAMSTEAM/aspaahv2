@@ -14,7 +14,7 @@ class CreateTblInscripcionesTable extends Migration
     public function up()
     {
         Schema::create('tbl_inscripciones', function (Blueprint $table) {
-            $table->integer('ID_INSCRIPCION')->primary();
+            $table->id('ID_INSCRIPCION');
             $table->char('ES_INS', 1);
             $table->dateTime('FE_INSCRIPCION');
             $table->dateTime('FE_ATENCION')->nullable();
