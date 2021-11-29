@@ -16,7 +16,7 @@ class CreateTblDireccionesTable extends Migration
         Schema::create('tbl_direcciones', function (Blueprint $table) {
             $table->id('ID_DIRECCION');
             $table->string('NO_REFERENCIA', 200);
-            $table->integer('FK_COMUNIDAD');
+            $table->unsignedBigInteger('FK_COMUNIDAD');
             
             $table->foreign('FK_COMUNIDAD', 'tbl_comunidad_tbl_direccion_fk')->references('ID_COMUNIDAD')->on('tbl_comunidades');
         });

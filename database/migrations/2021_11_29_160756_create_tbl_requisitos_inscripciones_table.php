@@ -16,8 +16,8 @@ class CreateTblRequisitosInscripcionesTable extends Migration
         Schema::create('tbl_requisitos_inscripciones', function (Blueprint $table) {
             $table->id('ID_REQUISITO_INSCRIPCION');
             $table->string('DE_URL', 200);
-            $table->integer('FK_INSCRIPCION');
-            $table->integer('FK_REQUISITO');
+            $table->unsignedBigInteger('FK_INSCRIPCION');
+            $table->unsignedBigInteger('FK_REQUISITO');
             
             $table->foreign('FK_INSCRIPCION', 'tbl_inscripcion_tbl_req_ins_fk')->references('ID_INSCRIPCION')->on('tbl_inscripciones');
             $table->foreign('FK_REQUISITO', 'tbl_requisito_tbl_req_ins_fk')->references('ID_REQUISITO')->on('tbl_requisitos');

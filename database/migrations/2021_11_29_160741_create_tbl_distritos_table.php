@@ -16,7 +16,7 @@ class CreateTblDistritosTable extends Migration
         Schema::create('tbl_distritos', function (Blueprint $table) {
             $table->id('ID_DISTRITO');
             $table->string('NO_DISTRITO', 100);
-            $table->integer('FK_PROVINCIA');
+            $table->unsignedBigInteger('FK_PROVINCIA');
             
             $table->foreign('FK_PROVINCIA', 'tbl_provincia_tbl_distrito_fk')->references('ID_PROVINCIA')->on('tbl_provincias');
         });

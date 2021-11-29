@@ -16,7 +16,7 @@ class CreateTblComunidadesTable extends Migration
         Schema::create('tbl_comunidades', function (Blueprint $table) {
             $table->id('ID_COMUNIDAD');
             $table->string('NO_COMUNIDAD', 100);
-            $table->integer('FK_DISTRITO');
+            $table->unsignedBigInteger('FK_DISTRITO');
             
             $table->foreign('FK_DISTRITO', 'tbl_distrito_tbl_comunidad_fk')->references('ID_DISTRITO')->on('tbl_distritos');
         });

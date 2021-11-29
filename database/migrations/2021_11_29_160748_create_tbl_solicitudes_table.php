@@ -20,8 +20,8 @@ class CreateTblSolicitudesTable extends Migration
             $table->integer('CO_SOLICITUD');
             $table->integer('NU_SOLICITUD');
             $table->char('ES_SOLICITUD', 1);
-            $table->integer('FK_TIPO_SOLICITUD');
-            $table->integer('FK_SOCIO');
+            $table->unsignedBigInteger('FK_TIPO_SOLICITUD');
+            $table->unsignedBigInteger('FK_SOCIO');
             
             $table->foreign('FK_SOCIO', 'tbl_socio_tbl_solicitud_fk')->references('PK_ID_SOCIO')->on('mae_socios');
             $table->foreign('FK_TIPO_SOLICITUD', 'tbl_tipo_solicitud_tbl_solicitud_fk')->references('PK_ID_TIPO_SOLICITUD')->on('tbl_tipos_solicitudes');

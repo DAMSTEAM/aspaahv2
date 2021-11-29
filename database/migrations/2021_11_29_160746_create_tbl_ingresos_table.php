@@ -21,7 +21,7 @@ class CreateTblIngresosTable extends Migration
             $table->float('CA_PAGO');
             $table->float('CA_DESCUENTO');
             $table->float('MO_TOTAL_PAGO');
-            $table->integer('FK_SOCIO');
+            $table->unsignedBigInteger('FK_SOCIO');
             
             $table->foreign('FK_SOCIO', 'tbl_socio_tbl_ingresos_fk')->references('PK_ID_SOCIO')->on('mae_socios');
         });

@@ -20,10 +20,10 @@ class CreateTblAlquileresTable extends Migration
             $table->string('DE_OBSERVACION', 200);
             $table->char('ES_ALQUILER', 1);
             $table->integer('CO_ALQUILER');
-            $table->integer('FK_SOLICITUD');
+            $table->unsignedBigInteger('FK_SOLICITUD');
             $table->unsignedBigInteger('FK_MAQUINARIA');
-            $table->integer('FK_DIRECCION');
-            $table->integer('FK_INGRESO');
+            $table->unsignedBigInteger('FK_DIRECCION');
+            $table->unsignedBigInteger('FK_INGRESO');
             
             $table->foreign('FK_DIRECCION', 'tbl_direccion_tbl_alquiler_fk')->references('ID_DIRECCION')->on('tbl_direcciones');
             $table->foreign('FK_INGRESO', 'tbl_ingresos_tbl_alquiler_fk')->references('ID_INGRESO')->on('tbl_ingresos');

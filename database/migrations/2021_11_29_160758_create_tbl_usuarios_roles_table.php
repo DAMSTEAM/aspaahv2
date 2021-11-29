@@ -15,8 +15,8 @@ class CreateTblUsuariosRolesTable extends Migration
     {
         Schema::create('tbl_usuarios_roles', function (Blueprint $table) {
             $table->id('ID_USUARIO_ROL');
-            $table->integer('FK_ROL');
-            $table->integer('FK_SOCIO');
+            $table->unsignedBigInteger('FK_ROL');
+            $table->unsignedBigInteger('FK_SOCIO');
             
             $table->foreign('FK_SOCIO', 'mae_usuario_tbl_usuario_role_fk')->references('PK_ID_SOCIO')->on('mae_usuarios');
             $table->foreign('FK_ROL', 'tbl_role_tbl_usuario_role_fk')->references('ID_ROL')->on('mae_roles');

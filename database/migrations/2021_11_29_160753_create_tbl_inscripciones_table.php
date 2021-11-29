@@ -18,9 +18,9 @@ class CreateTblInscripcionesTable extends Migration
             $table->char('ES_INS', 1);
             $table->dateTime('FE_INSCRIPCION');
             $table->dateTime('FE_ATENCION')->nullable();
-            $table->integer('FK_INGRESO');
-            $table->integer('FK_SOLICITADO');
-            $table->integer('FK_APROBADO');
+            $table->unsignedBigInteger('FK_INGRESO');
+            $table->unsignedBigInteger('FK_SOLICITADO');
+            $table->unsignedBigInteger('FK_APROBADO');
             
             $table->foreign('FK_SOLICITADO', 'mae_persona_tbl_inscripcion_fk')->references('PK_ID_SOCIO')->on('mae_personas');
             $table->foreign('FK_APROBADO', 'mae_socios_tbl_inscripciones_fk')->references('PK_ID_SOCIO')->on('mae_socios');
