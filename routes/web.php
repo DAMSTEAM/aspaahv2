@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\sys\AsistenciaController;
+use App\Http\Controllers\sys\EgresoController;
+use App\Http\Controllers\sys\EventoController;
+use App\Http\Controllers\sys\IngresoController;
+use App\Http\Controllers\sys\InscripcionController;
+use App\Http\Controllers\sys\PersonaController;
+use App\Http\Controllers\sys\SocioController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController as LivewireUserProfileController;
 
@@ -29,3 +36,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('comunidad/profile', functi
 Route::middleware(['auth:sanctum', 'verified'])->get('socio/profile', function() {
     return view('profile.socio.show');
 })->name('socio.show');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('socio', SocioController::class);
+    Route::resource('egreso', EgresoController::class);
+    Route::resource('evento', EventoController::class);
+    Route::resource('ingreso', IngresoController::class);
+    Route::resource('inscripcion', InscripcionController::class);
+    Route::resource('persona', PersonaController::class);
+    Route::resource('asistencia', AsistenciaController::class);
+});

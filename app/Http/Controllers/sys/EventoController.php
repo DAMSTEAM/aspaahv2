@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\sys;
 
+use App\Http\Controllers\Controller;
+use App\Models\sys\Evento;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -40,10 +42,10 @@ class EventoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\sys\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Evento $evento)
     {
         //
     }
@@ -51,10 +53,10 @@ class EventoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\sys\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Evento $evento)
     {
         //
     }
@@ -63,10 +65,10 @@ class EventoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\sys\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Evento $evento)
     {
         //
     }
@@ -74,10 +76,10 @@ class EventoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\sys\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Evento $evento)
     {
         //
     }
