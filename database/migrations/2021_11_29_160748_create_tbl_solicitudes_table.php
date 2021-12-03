@@ -15,7 +15,6 @@ class CreateTblSolicitudesTable extends Migration
     {
         Schema::create('tbl_solicitudes', function (Blueprint $table) {
             $table->id('ID_SOLICITUD');
-            $table->string('NO_SOLICITUD', 100);
             $table->string('DE_ASUNTO', 100);
             $table->integer('CO_SOLICITUD');
             $table->integer('NU_SOLICITUD');
