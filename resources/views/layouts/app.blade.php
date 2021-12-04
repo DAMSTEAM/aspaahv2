@@ -17,7 +17,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     <!-- Scripts AdminKit -->
     <script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>
