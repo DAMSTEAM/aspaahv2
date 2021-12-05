@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Socio;
 
-use App\Models\sys\Persona;
+use App\Models\sys\Socio;
 use Livewire\Component;
 
 class ListarSocio extends Component
@@ -12,7 +12,7 @@ class ListarSocio extends Component
 
     public function render()
     {
-        $personas = Persona::all();
-        return view('livewire.socio.listar-socio', compact('personas'));
+        $socios = Socio::all();
+        return view('livewire.socio.listar-socio', compact('socios'));
     }
 }

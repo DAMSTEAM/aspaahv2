@@ -18,10 +18,10 @@ class Socio extends Model
     protected $guarded = ['ID_SOCIO'];
 
     public function comunidad() {
-        return $this->belongsTo('App\Models\sys\Comunidad');
+        return $this->belongsTo('App\Models\sys\Comunidad', 'FK_COMUNIDAD', 'ID_COMUNIDAD');
     }
 
     public function persona() {
-        return $this->belongsTo('App\Models\sys\Persona');
+        return $this->belongsTo('App\Models\sys\Persona', 'FK_PERSONA', 'ID_SOCIO');
     }
 }

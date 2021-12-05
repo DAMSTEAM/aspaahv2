@@ -13,7 +13,7 @@ class Usuario extends Model
 
     public $incrementing = true;
 
-    protected $guarded = ['ID_USUARIO'];
+    protected $guarded = [''];
 
     public function persona() {
         return $this->belongsTo('App\Models\sys\Persona');

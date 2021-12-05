@@ -36,10 +36,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($personas as $persona)
+            @foreach ($socios as $socio)
             <tr>
-                <th scope="row" class="text-center">{{$persona->NO_SOCIO}}</th>
-                <td class="text-center">{{$persona->socio->PK_ID_SOCIO}}</td>
+                <th scope="row" class="text-center">{{$socio->ES_SOCIO}}</th>
+                <td class="text-center">{{$socio->comunidad->NO_COMUNIDAD}}</td>
                 <td class="text-center">Pedro marcos Alfredo Sanches</td>
                 <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
                             data-feather="thumbs-up"></i></span></td>

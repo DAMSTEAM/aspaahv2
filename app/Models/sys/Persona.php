@@ -18,11 +18,11 @@ class Persona extends Model
     protected $guarded = ['ID_PERSONA'];
 
     public function socio() {
-        return $this->hasOne('App\Models\sys\Socio', 'FK_PERSONA', 'ID_SOCIO');
+        return $this->hasOne('App\Models\sys\Socio', 'FK_SOCIO', 'ID_SOCIO');
     }
 
     public function user() {
-        return $this->hasOne('App\Models\User', 'FK_PERSONA', 'id');
+        return $this->hasOne('App\Models\User', 'user_id', 'id');
     }
 
     public function usuario() {

@@ -11,17 +11,17 @@ class Comunidad extends Model
 
     protected $table = "tbl_comunidades";
 
-    protected $primary_key = 'ID_COMUNIDAD';
+    protected $primary_key = '';
 
     public $incrementing = true;
 
-    protected $guarded = ['ID_COMUNIDAD'];
+    protected $guarded = [''];
 
     public function distrito() {
         return $this->belongsTo('App\Models\sys\Distrito');
     }
 
     public function socios() {
-        return $this->hasMany('App\Models\sys\Socio', 'FK_COMUNIDAD', 'ID_SOCIO');
+        return $this->hasMany('App\Models\sys\Socio', '', 'ID_SOCIO');
     }
 }
