@@ -22,6 +22,6 @@ class Socio extends Model
     }
 
     public function persona() {
-        return $this->belongsTo('App\Models\sys\Persona', 'FK_PERSONA', 'ID_SOCIO');
+        return $this->belongsTo('App\Models\sys\Persona', 'FK_PERSONA', 'ID_PERSONA');
     }
 }

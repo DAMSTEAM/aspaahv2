@@ -22,7 +22,7 @@ class Persona extends Model
     }
 
     public function user() {
-        return $this->hasOne('App\Models\User', 'user_id', 'id');
+        return $this->hasOne('App\Models\User', 'FK_PERSONA', 'ID_PERSONA');
     }
 
     public function usuario() {

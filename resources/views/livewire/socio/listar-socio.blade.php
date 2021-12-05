@@ -32,6 +32,8 @@
                 <th scope="col" class="text-center">DNI</th>
                 <th scope="col" class="text-center">Nombres y apellidos</th>
                 <th scope="col" class="text-center">Estado</th>
+                <th scope="col" class="text-center">Email</th>
+                <th scope="col" class="text-center">Comunidad</th>
                 <th scope="col" class="text-center">Acciones</th>
             </tr>
         </thead>
@@ -39,10 +41,22 @@
             @foreach ($socios as $socio)
             <tr>
                 <th scope="row" class="text-center">{{$socio->ES_SOCIO}}</th>
+                <td class="text-center">{{$socio->persona->CO_DNI}}</td>
+                <td class="text-center">{{$socio->persona->NO_SOCIO}} {{$socio->persona->AP_PATERNO}}
+                    {{$socio->persona->AP_MATERNO}}</td>
+                <td class="text-center">
+                    @if ($socio->ES_SOCIO == '1')
+                    <span class="badge rounded-circle bg-success p-2">
+                        <i class="align-middle" data-feather="thumbs-up"></i>
+                    </span>
+                    @else
+                    <span class="badge rounded-circle bg-danger p-2">
+                        <i class="align-middle" data-feather="thumbs-down"></i>
+                    </span>
+                    @endif
+                </td>
+                <td class="text-center">{{$socio->persona->user->email}}</td>
                 <td class="text-center">{{$socio->comunidad->NO_COMUNIDAD}}</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
                 <td class="text-center">
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
