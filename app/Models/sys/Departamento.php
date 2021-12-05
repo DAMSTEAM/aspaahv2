@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Departamento extends Model
 {
     use HasFactory;
+
+    protected $table = "tbl_departamentos";
+
+    protected $primary_key = 'ID_DEPARTAMENTO';
+
+    public $incrementing = true;
+
+    protected $guarded = ['ID_DEPARTAMENTO'];
 }

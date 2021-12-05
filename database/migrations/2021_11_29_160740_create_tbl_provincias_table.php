@@ -16,8 +16,9 @@ class CreateTblProvinciasTable extends Migration
         Schema::create('tbl_provincias', function (Blueprint $table) {
             $table->id('ID_PROVINCIA');
             $table->string('NO_PROVINCIA', 100);
+            $table->timestamps();
             $table->unsignedBigInteger('FK_DEPARTAMENTO');
-            
+
             $table->foreign('FK_DEPARTAMENTO', 'tbl_departamento_tbl_provincia_fk')->references('ID_DEPARTAMENTO')->on('tbl_departamentos');
         });
     }

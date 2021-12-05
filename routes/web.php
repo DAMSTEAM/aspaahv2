@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('socio/profile', function()
     return view('profile.socio.show');
 })->name('socio.show');
 
-/* Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::resource('socio', SocioController::class);
     Route::resource('egreso', EgresoController::class);
     Route::resource('evento', EventoController::class);
@@ -46,4 +46,3 @@ Route::middleware(['auth:sanctum', 'verified'])->get('socio/profile', function()
     Route::resource('persona', PersonaController::class);
     Route::resource('asistencia', AsistenciaController::class);
 });
- */

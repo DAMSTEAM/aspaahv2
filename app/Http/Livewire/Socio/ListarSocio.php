@@ -11,6 +11,7 @@ class ListarSocio extends Component
 
     public function render()
     {
+        
         return view('livewire.socio.listar-socio');
     }
     private function resetInput()

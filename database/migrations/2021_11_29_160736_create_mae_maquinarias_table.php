@@ -20,6 +20,7 @@ class CreateMaeMaquinariasTable extends Migration
             $table->string('CO_MARCA', 15);
             $table->string('NO_MODELO', 50);
             $table->string('DE_MAQUINARIA', 200);
+            $table->timestamps();
         });
     }
 
