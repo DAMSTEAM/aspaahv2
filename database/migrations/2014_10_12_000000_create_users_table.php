@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
+            $table->foreign('id', 'user_tbl_socio_fk')->references('PK_ID_SOCIO')->on('mae_personas');
+
         });
     }
 

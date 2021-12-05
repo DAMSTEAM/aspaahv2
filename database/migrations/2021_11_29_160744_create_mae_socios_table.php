@@ -14,7 +14,7 @@ class CreateMaeSociosTable extends Migration
     public function up()
     {
         Schema::create('mae_socios', function (Blueprint $table) {
-            $table->id('PK_ID_SOCIO');
+            $table->unsignedBigInteger('PK_ID_SOCIO', false)->primary();
             $table->char('ES_SOCIO', 1);
             $table->unsignedBigInteger('FK_COMUNIDAD');
             
