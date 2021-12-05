@@ -16,4 +16,12 @@ class Comunidad extends Model
     public $incrementing = true;
 
     protected $guarded = ['ID_COMUNIDAD'];
+
+    public function distrito() {
+        return $this->belongsTo('App\Models\sys\Distrito');
+    }
+
+    public function socios() {
+        return $this->hasMany('App\Models\sys\Socio', 'FK_COMUNIDAD', 'ID_SOCIO');
+    }
 }

@@ -16,4 +16,8 @@ class Departamento extends Model
     public $incrementing = true;
 
     protected $guarded = ['ID_DEPARTAMENTO'];
+
+    public function provincias() {
+        return $this->hasMany('App\Models\sys\Provincia', 'FK_DEPARTAMENTO', 'ID_PROVINCIA');
+    }
 }

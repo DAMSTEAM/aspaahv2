@@ -21,7 +21,7 @@ class CreateTblAsistenciasTable extends Migration
             $table->unsignedBigInteger('FK_SOCIO');
             
             $table->foreign('FK_EVENTO', 'tbl_evento_tbl_asistencia_fk')->references('ID_EVENTO')->on('tbl_eventos');
-            $table->foreign('FK_SOCIO', 'tbl_socio_tbl_asistencia_fk')->references('PK_ID_SOCIO')->on('mae_socios');
+            $table->foreign('FK_SOCIO', 'mae_socio_tbl_asistencia_fk')->references('ID_SOCIO')->on('mae_socios');
         });
     }
 

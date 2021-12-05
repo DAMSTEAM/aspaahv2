@@ -14,12 +14,14 @@ class CreateMaeUsuariosTable extends Migration
     public function up()
     {
         Schema::create('mae_usuarios', function (Blueprint $table) {
-            $table->unsignedBigInteger('PK_ID_SOCIO', false)->primary();
+            $table->id('ID_USUARIO');
             $table->string('US_NOMBRE', 20);
             $table->string('DE_EMAIL', 100);
             $table->string('PW_USUARIO', 15);
+            $table->unsignedBigInteger('FK_PERSONA')->unique();
+            $table->timestamps();
             
-            $table->foreign('PK_ID_SOCIO', 'mae_persona_mae_usuario_fk')->references('PK_ID_SOCIO')->on('mae_personas');
+            $table->foreign('FK_PERSONA', 'mae_persona_mae_usuario_fk')->references('ID_PERSONA')->on('mae_personas');
         });
     }
 

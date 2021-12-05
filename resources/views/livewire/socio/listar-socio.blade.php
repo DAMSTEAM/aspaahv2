@@ -36,9 +36,10 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($personas as $persona)
             <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
+                <th scope="row" class="text-center">{{$persona->NO_SOCIO}}</th>
+                <td class="text-center">{{$persona->socio->PK_ID_SOCIO}}</td>
                 <td class="text-center">Pedro marcos Alfredo Sanches</td>
                 <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
                             data-feather="thumbs-up"></i></span></td>
@@ -53,91 +54,7 @@
                     </div>
                 </td>
             </tr>
-            <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
-                <td class="text-center">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
-                <td class="text-center">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
-                <td class="text-center">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
-                <td class="text-center">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-center">12</th>
-                <td class="text-center">12345678</td>
-                <td class="text-center">Pedro marcos Alfredo Sanches</td>
-                <td class="text-center"><span class="badge rounded-circle bg-success p-2"><i class="align-middle"
-                            data-feather="thumbs-up"></i></span></td>
-                <td class="text-center">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
-                    </div>
-                </td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

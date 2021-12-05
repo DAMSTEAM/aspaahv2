@@ -22,8 +22,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->unsignedBigInteger('FK_PERSONA')->unique();
             $table->timestamps();
-            $table->foreign('id', 'user_tbl_socio_fk')->references('PK_ID_SOCIO')->on('mae_personas');
+
+            $table->foreign('FK_PERSONA', 'mae_persona_user_fk')->references('ID_PERSONA')->on('mae_personas');
 
         });
     }

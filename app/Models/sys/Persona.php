@@ -11,9 +11,21 @@ class Persona extends Model
 
     protected $table = "mae_personas";
 
-    protected $primary_key = 'PK_ID_SOCIO';
+    protected $primary_key = 'ID_PERSONA';
 
     public $incrementing = true;
 
-    protected $guarded = ['PK_ID_SOCIO'];
+    protected $guarded = ['ID_PERSONA'];
+
+    public function socio() {
+        return $this->hasOne('App\Models\sys\Socio', 'FK_PERSONA', 'ID_SOCIO');
+    }
+
+    public function user() {
+        return $this->hasOne('App\Models\User', 'FK_PERSONA', 'id');
+    }
+
+    public function usuario() {
+        return $this->hasOne('App\Models\sys\Usuario', 'FK_PERSONA', 'ID_USUARIO');
+    }
 }

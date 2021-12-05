@@ -14,14 +14,15 @@ class CreateMaeSociosTable extends Migration
     public function up()
     {
         Schema::create('mae_socios', function (Blueprint $table) {
-            $table->unsignedBigInteger('PK_ID_SOCIO', false)->primary();
+            $table->id('ID_SOCIO');
             $table->char('ES_SOCIO', 1);
             $table->char('TI_SOCIO', 1);
-            $table->timestamps();
             $table->unsignedBigInteger('FK_COMUNIDAD');
+            $table->unsignedBigInteger('FK_PERSONA')->unique();
+            $table->timestamps();
             
-            $table->foreign('PK_ID_SOCIO', 'mae_persona_tbl_socio_fk')->references('PK_ID_SOCIO')->on('mae_personas');
-            $table->foreign('FK_COMUNIDAD', 'tbl_comunidad_tbl_socio_fk')->references('ID_COMUNIDAD')->on('tbl_comunidades');
+            $table->foreign('FK_PERSONA', 'mae_persona_mae_socio_fk')->references('ID_PERSONA')->on('mae_personas');
+            $table->foreign('FK_COMUNIDAD', 'tbl_comunidad_mae_socio_fk')->references('ID_COMUNIDAD')->on('tbl_comunidades');
         });
     }
 

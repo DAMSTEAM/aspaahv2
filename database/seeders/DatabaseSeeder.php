@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
 
-
     public function run()
     {
         \App\Models\sys\Persona::factory(10)->create();
@@ -23,20 +22,20 @@ class DatabaseSeeder extends Seeder
         \App\Models\sys\Distrito::factory(10)->create();
         \App\Models\sys\Comunidad::factory(10)->create();
 
-        $PK_ID_SOCIO = Persona::all()->random()->PK_ID_SOCIO;
+        $ADMIN = Persona::all()->first()->ID_PERSONA;
 
         \App\Models\User::create([
-            'id' => $PK_ID_SOCIO,
             'name' => 'Saul Ytucayasi',
             'email' => 'saul.ytucayasi@upeu.edu.pe',
-            'password' => bcrypt('saul12345')
+            'password' => bcrypt('saul12345'),
+            'FK_PERSONA' => $ADMIN
         ]);
 
         \App\Models\sys\Socio::create([
-            'PK_ID_SOCIO' => $PK_ID_SOCIO,
             'ES_SOCIO' => '1',
             'TI_SOCIO' => '0',
-            'FK_COMUNIDAD' => Comunidad::all()->random()->ID_COMUNIDAD
+            'FK_COMUNIDAD' => Comunidad::all()->random()->ID_COMUNIDAD,
+            'FK_PERSONA' => $ADMIN 
         ]);
     }
 }

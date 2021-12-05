@@ -16,4 +16,12 @@ class Provincia extends Model
     public $incrementing = true;
 
     protected $guarded = ['ID_PROVINCIA'];
+
+    public function departamento() {
+        return $this->belongsTo('App\Models\sys\Departamento');
+    }
+
+    public function distritos() {
+        return $this->hasMany('App\Models\sys\Distritos', 'FK_PROVINCIA', 'ID_DISTRITO');
+    }
 }

@@ -19,7 +19,7 @@ class CreateTblEgresosTable extends Migration
             $table->float('MO_DINERO');
             $table->unsignedBigInteger('FK_SOCIO');
             
-            $table->foreign('FK_SOCIO', 'tbl_socio_tbl_egresos_fk')->references('PK_ID_SOCIO')->on('mae_socios');
+            $table->foreign('FK_SOCIO', 'mae_socio_tbl_egresos_fk')->references('ID_SOCIO')->on('mae_socios');
         });
     }
 

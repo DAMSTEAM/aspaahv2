@@ -11,9 +11,17 @@ class Socio extends Model
 
     protected $table = "mae_socios";
 
-    protected $primary_key = 'PK_ID_SOCIO';
+    protected $primary_key = 'ID_SOCIO';
 
-    public $incrementing = false;
+    public $incrementing = true;
 
-    protected $guarded = ['PK_ID_SOCIO'];
+    protected $guarded = ['ID_SOCIO'];
+
+    public function comunidad() {
+        return $this->belongsTo('App\Models\sys\Comunidad');
+    }
+
+    public function persona() {
+        return $this->belongsTo('App\Models\sys\Persona');
+    }
 }
