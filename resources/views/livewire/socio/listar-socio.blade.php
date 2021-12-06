@@ -9,6 +9,7 @@
 
             <select class="form-select" aria-label="Default select example">
                 <option disabled selected>Buscar por</option>
+                <option value="1">Nombres y apellidos</option>
                 <option value="1">Comunidad</option>
                 <option value="2">Estado</option>
                 <option value="3">DNI</option>
@@ -22,7 +23,7 @@
             <button type="button" class="btn btn-success px-4">Exportar Excel</button>
         </div>
         <div>
-            <button type="button" class="btn btn-success">Nuevo Socio</button>
+            <a type="button" class="btn btn-success" href="{{route('socios.create')}}">Nuevo Socio</a>
         </div>
     </div>
     <table class="table table-borderless">
@@ -40,7 +41,7 @@
         <tbody>
             @foreach ($socios as $socio)
             <tr>
-                <th scope="row" class="text-center">{{$socio->ES_SOCIO}}</th>
+                <td class="text-center">{{$socio->ID_SOCIO}}</td>
                 <td class="text-center">{{$socio->persona->CO_DNI}}</td>
                 <td class="text-center">{{$socio->persona->NO_SOCIO}} {{$socio->persona->AP_PATERNO}}
                     {{$socio->persona->AP_MATERNO}}</td>
@@ -59,12 +60,12 @@
                 <td class="text-center">{{$socio->comunidad->NO_COMUNIDAD}}</td>
                 <td class="text-center">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
-                            Ver</button>
-                        <button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit-3"></i>
-                            Actualizar</button>
-                        <button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</button>
+                        <a type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
+                            Ver</a>
+                        <a type="button" class="btn btn-warning" href="{{route('socios.edit', $socio->ID_SOCIO)}}"><i class="align-middle" data-feather="edit-3"></i>
+                            Actualizar</a>
+                        <a type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
+                            Retirar</a>
                     </div>
                 </td>
             </tr>

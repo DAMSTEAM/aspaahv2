@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    @livewireStyles
+
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
@@ -24,6 +24,8 @@
 
     <!-- Scripts Icons -->
     <script src="https://kit.fontawesome.com/9ac59e778b.js" crossorigin="anonymous"></script>
+
+	@livewireStyles
 </head>
 
 <body>

@@ -11,14 +11,14 @@ class Comunidad extends Model
 
     protected $table = "tbl_comunidades";
 
-    protected $primary_key = '';
+    protected $primaryKey = 'ID_COMUNIDAD'; //id
 
     public $incrementing = true;
 
-    protected $guarded = [''];
+    protected $guarded = ['ID_COMUNIDAD'];
 
     public function distrito() {
-        return $this->belongsTo('App\Models\sys\Distrito');
+        return $this->belongsTo('App\Models\sys\Distrito', 'FK_DISTRITO', 'ID_COMUNIDAD');
     }
 
     public function socios() {

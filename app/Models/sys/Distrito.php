@@ -11,14 +11,14 @@ class Distrito extends Model
 
     protected $table = "tbl_distritos";
 
-    protected $primary_key = 'ID_DISTRITO';
+    protected $primaryKey = 'ID_DISTRITO';
 
     public $incrementing = true;
 
     protected $guarded = ['ID_DISTRITO'];
 
     public function provincia() {
-        return $this->belongsTo('App\Models\sys\Provincia');
+        return $this->belongsTo('App\Models\sys\Provincia', 'FK_DISTRITO', 'ID_DISTRITO');
     }
 
     public function comunidades() {

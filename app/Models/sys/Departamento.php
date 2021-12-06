@@ -11,7 +11,7 @@ class Departamento extends Model
 
     protected $table = "tbl_departamentos";
 
-    protected $primary_key = 'ID_DEPARTAMENTO';
+    protected $primaryKey = 'ID_DEPARTAMENTO';
 
     public $incrementing = true;
 

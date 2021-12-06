@@ -11,7 +11,7 @@ class Socio extends Model
 
     protected $table = "mae_socios";
 
-    protected $primary_key = 'ID_SOCIO';
+    protected $primaryKey = 'ID_SOCIO';
 
     public $incrementing = true;
 

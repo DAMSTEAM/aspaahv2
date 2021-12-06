@@ -11,7 +11,7 @@ class Provincia extends Model
 
     protected $table = "tbl_provincias";
 
-    protected $primary_key = 'ID_PROVINCIA';
+    protected $primaryKey = 'ID_PROVINCIA';
 
     public $incrementing = true;
 
