@@ -38,11 +38,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('socio/profile', function()
 })->name('socio.show');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('socio', SocioController::class);
-    Route::resource('egreso', EgresoController::class);
+    Route::resource('socios', SocioController::class);
+/*     Route::resource('egreso', EgresoController::class);
     Route::resource('evento', EventoController::class);
     Route::resource('ingreso', IngresoController::class);
     Route::resource('inscripcion', InscripcionController::class);
     Route::resource('persona', PersonaController::class);
-    Route::resource('asistencia', AsistenciaController::class);
+    Route::resource('asistencia', AsistenciaController::class); */
 });

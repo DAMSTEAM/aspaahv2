@@ -16,7 +16,7 @@
             <li class="sidebar-header">
                 Acciones
             </li>
-            <x-item-sidebar class="sidebar-link"  href="{{route('socio.index')}}" :active="request()->routeIs('socio.index')">
+            <x-item-sidebar class="sidebar-link"  href="{{route('socios.index')}}" :active="request()->routeIs('socios.index') | request()->routeIs('socios.create')">
                 <i class="align-middle" data-feather="users"></i> <span class="align-middle">Socios</span>
             </x-item-sidebar>
             <x-item-sidebar class="sidebar-link"  href="{{route('profile.show')}}" :active="request()->routeIs('maquinaria.show')">
