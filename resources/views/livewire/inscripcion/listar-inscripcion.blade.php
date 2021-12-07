@@ -30,35 +30,43 @@
         <thead class="text-light" style="background-color: #222E3C;">
             <tr>
                 <th scope="col" class="text-center">Código</th>
-                <th scope="col" class="text-center">DNI</th>
-                <th scope="col" class="text-center">Nombres y apellidos</th>
+                <th scope="col" class="text-center">Solictado por</th>
+                <th scope="col" class="text-center">Aprobado por</th>
                 <th scope="col" class="text-center">Estado</th>
-                <th scope="col" class="text-center">Email</th>
-                <th scope="col" class="text-center">Comunidad</th>
+                <th scope="col" class="text-center">Requisitos</th>
                 <th scope="col" class="text-center">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($socios as $socio)
+            @foreach ($inscripciones as $inscripcion)
             <tr>
-                <td class="text-center">{{$socio->ID_SOCIO}}</td>
-                <td class="text-center">{{$socio->persona->CO_DNI}}</td>
-                <td class="text-center">{{$socio->persona->NO_SOCIO}} {{$socio->persona->AP_PATERNO}}
-                    {{$socio->persona->AP_MATERNO}}</td>
+                <td class="text-center">{{$inscripcion->ID_INSCRIPCION}}</td>
+                <td class="text-center">{{$inscripcion->persona->NO_SOCIO}}</td>
+                <td class="text-center">{{$inscripcion->socio->persona->NO_SOCIO}}</td>
                 <td class="text-center">
-                    @if ($socio->ES_SOCIO == '1')
-                    <i class="fas fa-thumbs-up align-middle fa-2x text-success"></i>
+                    @if ($inscripcion->ES_INSCRIPCION == '1')
+                    <i class="fas fa-check-circle align-middle fa-2x text-success"></i>
+                    @elseif ($inscripcion->ES_INSCRIPCION == '2')
+                    <i class="fas fa-question-circle align-middle fa-2x text-warning"></i>
                     @else
-                    <i class="fas fa-thumbs-down align-middle fa-2x text-danger"></i>
+                    <i class="fas fa-exclamation-circle align-middle fa-2x text-danger"></i>
                     @endif
                 </td>
-                <td class="text-center">{{$socio->persona->user->email}}</td>
-                <td class="text-center">{{$socio->comunidad->NO_COMUNIDAD}}</td>
+                <td class="text-center">
+                    <select class="form-select">
+                        <option value="0" selected>Requisitos</option>
+                        @foreach ($inscripcion->requisitos_inscripciones as $req_first)
+                        <option value="0">{{$req_first->requisito->NO_REQUISITO}}</option>
+                        @endforeach
+                    </select>
+                </td>
                 <td class="text-center">
                     <div class="btn-group" role="group">
                         <a type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
                             Ver</a>
-                        <a type="button" class="btn btn-warning" href="{{route('socios.edit', $socio->ID_SOCIO)}}"><i class="align-middle" data-feather="edit-3"></i>
+                        <a type="button" class="btn btn-warning"
+                            href="{{route('socios.edit', $inscripcion->ID_INSCRIPCION)}}"><i class="align-middle"
+                                data-feather="edit-3"></i>
                             Actualizar</a>
                         <a type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
                             Retirar</a>

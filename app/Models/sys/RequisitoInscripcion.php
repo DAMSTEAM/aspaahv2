@@ -18,10 +18,10 @@ class RequisitoInscripcion extends Model
     protected $guarded = ['ID_REQUISITO_INSCRIPCION'];
 
     public function requisito() {
-        return $this->belongsTo('App\Models\sys\Requisito', 'FK_REQUISITO', 'ID_REQUISITOS_INSCRIPCIONES');
+        return $this->belongsTo('App\Models\sys\Requisito', 'FK_REQUISITO', 'ID_REQUISITO');
     }
 
     public function inscripcion() {
-        return $this->belongsTo('App\Models\sys\Inscripcion', 'FK_INSCRIPCION', 'ID_REQUISITOS_INSCRIPCIONES');
+        return $this->belongsTo('App\Models\sys\Inscripcion', 'FK_INSCRIPCION', 'ID_REQUISITO_INSCRIPCION');
     }
 }

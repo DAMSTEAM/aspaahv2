@@ -15,12 +15,11 @@ class CreateTblInscripcionesTable extends Migration
     {
         Schema::create('tbl_inscripciones', function (Blueprint $table) {
             $table->id('ID_INSCRIPCION');
-            $table->char('ES_INS', 1);
-            $table->dateTime('FE_INSCRIPCION');
-            $table->dateTime('FE_ATENCION')->nullable();
+            $table->char('ES_INSCRIPCION', 1);
             $table->unsignedBigInteger('FK_INGRESO');
             $table->unsignedBigInteger('FK_SOLICITADO');
             $table->unsignedBigInteger('FK_APROBADO');
+            $table->timestamps();
             
             $table->foreign('FK_SOLICITADO', 'mae_persona_tbl_inscripcion_fk')->references('ID_PERSONA')->on('mae_personas');
             $table->foreign('FK_APROBADO', 'mae_socios_tbl_inscripciones_fk')->references('ID_SOCIO')->on('mae_socios');

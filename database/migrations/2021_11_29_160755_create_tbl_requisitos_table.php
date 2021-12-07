@@ -16,6 +16,7 @@ class CreateTblRequisitosTable extends Migration
         Schema::create('tbl_requisitos', function (Blueprint $table) {
             $table->id('ID_REQUISITO');
             $table->string('NO_REQUISITO', 100);
+            $table->timestamps();
         });
     }
 

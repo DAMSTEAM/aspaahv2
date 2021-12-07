@@ -31,6 +31,9 @@
             <x-item-sidebar class="sidebar-link"  href="{{route('profile.show')}}" :active="request()->routeIs('solicitud.show')">
                 <i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Solicitudes</span>
             </x-item-sidebar>
+            <x-item-sidebar class="sidebar-link"  href="{{route('inscripciones.index')}}" :active="request()->routeIs('inscripciones.index')">
+                <i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Inscripciones</span>
+            </x-item-sidebar>
             <li class="sidebar-header">
                 Ayuda
             </li>

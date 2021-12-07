@@ -11,11 +11,11 @@ class Requisito extends Model
 
     protected $table = "tbl_requisitos";
 
-    protected $primaryKey = 'ID_REQUISITOS';
+    protected $primaryKey = 'ID_REQUISITO';
 
     public $incrementing = true;
 
-    protected $guarded = ['ID_REQUISITOS'];
+    protected $guarded = ['ID_REQUISITO'];
 
     public function requisitos_inscripciones() {
         return $this->hasMany('App\Models\sys\RequisitoInscripcion', 'FK_REQUISITO', 'ID_REQUISITO');

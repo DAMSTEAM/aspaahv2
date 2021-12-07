@@ -18,11 +18,11 @@ class Inscripcion extends Model
     protected $guarded = ['ID_INSCRIPCION'];
 
     public function socio() {
-        return $this->belongsTo('App\Models\sys\Socio', 'FK_APROBADO', 'ID_INSCRIPCION');
+        return $this->belongsTo('App\Models\sys\Socio', 'FK_APROBADO', 'ID_SOCIO');
     }
 
     public function persona() {
-        return $this->belongsTo('App\Models\sys\Persona', 'FK_SOLICITADO', 'ID_INSCRIPCION');
+        return $this->belongsTo('App\Models\sys\Persona', 'FK_SOLICITADO', 'ID_PERSONA');
     }
 
     public function ingreso() {
@@ -30,6 +30,6 @@ class Inscripcion extends Model
     }
 
     public function requisitos_inscripciones() {
-        return $this->hasMany('App\Models\sys\RequisitoInscipcion', 'FK_INSCRIPCION', 'ID_INSCRIPCION');
+        return $this->hasMany('App\Models\sys\RequisitoInscripcion', 'FK_INSCRIPCION', 'ID_INSCRIPCION');
     }
 }
