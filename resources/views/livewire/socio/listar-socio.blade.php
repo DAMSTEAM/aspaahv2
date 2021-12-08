@@ -23,7 +23,8 @@
             <button type="button" class="btn btn-success px-4">Exportar Excel</button>
         </div>
         <div>
-            <a type="button" class="btn btn-success" href="{{route('socios.create')}}">Nuevo Socio</a>
+            <a type="button" class="btn btn-success" href="{{route('socios.create')}}"><i class="fas fa-handshake me-1"></i> Nuevo socio </a>
+            <a type="button" class="btn btn-info" href="{{route('socios.create')}}"><i class="fas fa-user me-1"></i> Agregar persona</a>
         </div>
     </div>
     <table class="table table-borderless">

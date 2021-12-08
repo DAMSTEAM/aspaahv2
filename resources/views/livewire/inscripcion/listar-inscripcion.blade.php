@@ -62,14 +62,13 @@
                 </td>
                 <td class="text-center">
                     <div class="btn-group" role="group">
-                        <a type="button" class="btn btn-info"><i class="align-middle" data-feather="eye"></i>
+                        <a type="button" class="btn btn-info"><i class="fas fa-eye align-middle me-1"></i>
                             Ver</a>
                         <a type="button" class="btn btn-warning"
-                            href="{{route('socios.edit', $inscripcion->ID_INSCRIPCION)}}"><i class="align-middle"
-                                data-feather="edit-3"></i>
+                            href="{{route('socios.edit', $inscripcion->ID_INSCRIPCION)}}"><i class="fas fa-edit align-middle me-1"></i>
                             Actualizar</a>
-                        <a type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i>
-                            Retirar</a>
+                        <a type="button" class="btn btn-danger"><i class="fas fa-plus-square align-middle me-1"></i>
+                            Aprobar</a>
                     </div>
                 </td>
             </tr>
